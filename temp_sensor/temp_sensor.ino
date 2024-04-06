@@ -37,7 +37,7 @@ String sensor2_tempC;
 String reading_timestamp; 
 File myFile;
 
-long reading_delay_minutes = 30; // 1min
+long reading_delay_minutes = 30; 
 const String file_name_prefix = "temp.csv";
 
 // real-time-clock setup
@@ -45,8 +45,8 @@ RTC_DS3231 rtc;
 String reading_time;
 
 int tempSensorCount = 0;
-const String sensorAddress1 = "28e94fcfb121064b"; // long yellow 
-const String sensorAddress2 = "28b72bf5b121062b"; // short yellow 
+const String longCableSensorAddress = "28e94fcfb121064b"; // long cables (lower) 
+const String shortCableSensorAddress = "28b72bf5b121062b"; // short cables (upper) - taped 
 
 void setup(void)
 {
@@ -145,6 +145,8 @@ void writeTempRecord(DeviceAddress sensor, String reading_timestamp, String file
   // if the file opened okay, write to it:
   if (myFile) {
     Serial.print("Writing ");
+    Serial.print(sensor_name);
+    Serial.print(" ");
     Serial.print(sensor_tempC); 
     Serial.print(" into "); 
     Serial.print(fileName);
@@ -205,10 +207,10 @@ String labelSensor(DeviceAddress sensor)
   String sensor_id = addressString(sensor);
   String sensor_name;
 
-  if (sensor_id.equals(sensorAddress1)){
-      sensor_name = "LONG_YELLOW";
-  } else if (sensor_id.equals(sensorAddress2)){
-      sensor_name = "SHORT_YELLOW";
+  if (sensor_id.equals(longCableSensorAddress)){
+      sensor_name = "INNER";
+  } else if (sensor_id.equals(shortCableSensorAddress)){
+      sensor_name = "OUTER";
   } else {
       sensor_name = "UNKNOWN_SENSOR";
   }

@@ -25,6 +25,8 @@ The Arduino code for this project initializes the sensors, RTC module, SD card, 
 
 The repo also contains a Python script that plots the temperature logs on a time chart (dependency installations are not included).
 
+![plot_temp_log.py](media/images/Figure_1.png)
+
 ## Pending improvements 
 - error catching/logging
 - additional LED indicators

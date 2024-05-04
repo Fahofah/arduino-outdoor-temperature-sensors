@@ -1,9 +1,9 @@
 # Battery-Powered Multi-Thermometer with SD Card Data Logging and RTC
 
 ## Overview
-This project implements a battery-powered thermometer that measures temperature at regular intervals and logs the data to an SD card. Additionally, it uses an RTC (Real-Time Clock) module to track time accurately and continuously (even off-battery). 
+This project introduces a battery-powered thermometer designed to monitor temperature consistently, recording data onto an SD card. Equipped with an RTC (Real-Time Clock) module, it ensures precise and uninterrupted time tracking, even when not connected to a power source.
 
-The original purpose for this project was aimed at creating a tool to automatically and continually log temperatures during a thermophilic composting process. This process requires the compost to go through certain thermal stages for certain durations to achieve some of the optimal results, so this logging can be used to confirm that it has taken place and also to analyse behaviour and identify improvements. However, the product can be extended and used in other scenarios if one wishes to.
+The initial intent behind this project was to create a tool for consistent temperature monitoring during thermophilic composting. This process requires precise temperature control for specific time periods to achieve optimal results. The logged data serves the purpose of verifying the efficacy of the composting process and provides insights for potential enhancements. However, the tool's flexibility allows for its application in diverse scenarios beyond composting.
 
 image here
 
@@ -23,15 +23,11 @@ image here
 ## Code Description
 The Arduino code for this project initializes the sensors, RTC module, SD card, and other components. It reads temperature data from DS18B20 sensors, timestamps it using the RTC module, and writes it to a CSV file on the SD card. The code includes functions for initializing the components, reading and writing data, and managing the RTC. 
 
+### Plotting the Results
 The repo also contains a Python script that plots the temperature logs on a time chart (dependency installations are not included).
 
-![plot_temp_log.py](media/images/Figure_1.png)
+<img src="media/images/Figure_1.png" width="50%" height="50%" alt="plot_temp_log.py">
 
-## Pending improvements 
-- error catching/logging
-- additional LED indicators
-- a button for graceful start/stop
-- incorporating a weather API to separately add outside temperature for the timestamp readings taken, so that it can be added to the time chart/analysis. 
 
 ## Setup Instructions
 1. Strip the ends of the DS18B20 temperature sensor(s), and screw into the 3-pin terminal block(s). The signal wire requires a 4.7K Ohm resistor connected in between the positive wire to produce the signal for the reading. 
@@ -48,9 +44,16 @@ images here
 - Monitor the battery voltage periodically and replace batteries as needed.
 - Customize the Arduino code as per specific requirements or additional features.
 
+## Pending improvements 
+- error catching/logging
+- additional LED indicators
+- a button for graceful start/stop
+- incorporating a weather API to separately add outside temperature for the timestamp readings taken, so that it can be added to the time chart/analysis. 
+
+
 ## Author
 Fahri Ulucay
 
 ## License
-Free to use and distribute
+Free to use and distribute.
 

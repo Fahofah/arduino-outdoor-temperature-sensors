@@ -37,7 +37,7 @@ By default the interval for temperature reading is every 30 minutes, you can cha
 
 The CSV file name has no impact but if you want to change it to something else do so by changing the file_name value. 
 
-<img src="/media/images/delay_and_fileName.png" width="40%" height="20%" alt="delay_and_fileName">
+<img src="/media/images/delay_and_fileName.png" width="40%" height="25%" alt="delay_and_fileName">
 
 *If you change the file name here and want to use the [Python script](/plot_temp_log.py) to plot the results graph, make sure to match the name in there too.*
 
@@ -50,7 +50,7 @@ Finally if you decide to use different pin connections for any reason, the two t
 
 Again locate the below variables and change the values accordingly, if needed.
 
-<img src="/media/images/digital_inputs.png" width="50%" height="20%" alt="digital_inputs">
+<img src="/media/images/digital_inputs.png" width="40%" height="15%" alt="digital_inputs">
 
 
 

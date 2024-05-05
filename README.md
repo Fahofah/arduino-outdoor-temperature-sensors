@@ -6,7 +6,7 @@ This project introduces a battery-powered thermometer designed to monitor temper
 The initial intent behind this project was to create a tool for consistent temperature monitoring during thermophilic composting. This process requires precise temperature control for specific time periods to achieve optimal results. The logged data serves the purpose of verifying the efficacy of the composting process and provides insights for potential enhancements. However, the tool's flexibility allows for its application in diverse scenarios beyond composting.
 
 
-<img src="media/images/0.png" width="100%" height="100%" alt="box_above">
+<img src="media/images/0.jpeg" width="100%" height="100%" alt="box_above">
 
 
 Detailed instructions on how to build for one yourself can be found in the [Setup Instructions](/media/manuals/"Setup_Instructions.md) document

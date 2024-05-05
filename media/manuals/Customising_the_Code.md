@@ -20,7 +20,7 @@ As the default code uses the IDs of my sensors, you should see UKNOWN_SENSOR app
 
 3. Locate the constant setting lines for sensor address(es) (currently 41) and replace the ID(s) there with your ID(s) obtained in the previuos step.
 
-<img src="/media/images/sensor_addresses_variables.png" width="50%" height="40%" alt="sensor_addresses_variables">
+<img src="/media/images/sensor_addresses_variables.png" width="50%" height="80%" alt="sensor_addresses_variables">
 
 4. Now, locate the labelSesor() function (currently line 174) and change the sensor_name values as you like for each sensor ID - these names will be the ones appearing in the CSV and the Serial Monitor. If you have more than 2 sensor duplicate the *else if satetements* for the number of sensor IDs you have.
 

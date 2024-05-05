@@ -36,7 +36,7 @@ Please note that you can customize these instructions to better suit your setup.
 
 2. Strip the ends of the DS18B20 temperature sensor wires and attach them to the 3-pin terminal block(s). This step may require careful wiring.
 
-The signal wire needs a 4.7K Ohm resistor connected in series with the positive wire to generate the signal for the reading. Simply connect the sensors in series, and everything else should function properly.
+    The signal wire needs a 4.7K Ohm resistor connected in series with the positive wire to generate the signal for the reading. Simply connect the sensors in series, and everything else should function properly.
 
    - **Wire Connections:**
      - Yellow (Signal) to D8 (Arduino Digital Input)

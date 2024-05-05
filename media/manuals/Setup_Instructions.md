@@ -20,8 +20,6 @@ This guide serves as a flexible reference for setting up a portable weatherproof
 - 2L leak-proof food container (modifiable)
 - 3-Pin terminal block (modifiable)
 
-<img src="/media/images/2.jpeg" width="100%" height="50%" alt="box_open">
-
 
 ## Setup Instructions
 Please note that you can customize these instructions to better suit your setup. However, ensure to update the pin connections in the code accordingly. Refer to the [Customizing the Code](media/manuals/Customising_the_Code.md) document for details.
@@ -55,7 +53,7 @@ Please note that you can customize these instructions to better suit your setup.
 
 4. Connect the Arduino's 5V pin to the positive and GND pin to the negative terminal of the breadboard.
 
-#### Close-up Breadboard Wiring at this stage:
+Close-up of the breadboard wiring at this stage:
 
 <img src="/media/images/wiring_closeup.jpeg" width="100%" height="20%" alt="wiring_closeup">
 
@@ -77,6 +75,11 @@ When wired neatly, all components fit onto the half of a 800 point breadboard so
 of the cable galnds to mark the circles for where the sensor cable(s) will pass through. Carefully drill through these to create a nice clean opening and install the cable glands into place. Take the cable(s) through the gland(s) and tighthen the glands to estanlish a solid weatherproof connection. 
 
 3. Place the power bank into it's position and connect it to the Arduino unit using a USB cable - a 90 degree angled one could work out better here. 
+
+
+<img src="/media/images/2.jpeg" width="100%" height="30%" alt="box_open">
+
+
 
 4. Close the lid and you have your portable weatherproof tempereture logger ready to go! 
 

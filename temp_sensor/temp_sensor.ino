@@ -1,15 +1,8 @@
 /* 
 Author: Fahri Ulucay
 Purpose: Take temperature readings from DS3231 sensors at set intervals and write to an SD card. 
-         Also, incoprorates RTC for off power, time continuation. 
+         Also, incoprorates RTC for off power time continuation. 
 First prod release date: 31.03.2024
-Known issues:
-  - Long serial print during writeSD does not work (although sometimes does and used to)
-Pending improvements: 
-  - Error catching/logging
-  - More operational LED indicators
-  - Button to start/stop gracefully
-
 */
 
 #include <OneWire.h>
@@ -38,15 +31,15 @@ String reading_timestamp;
 File myFile;
 
 long reading_delay_minutes = 30; 
-const String file_name_prefix = "temp.csv";
+const String file_name = "temp.csv";
 
 // real-time-clock setup
 RTC_DS3231 rtc;
 String reading_time;
 
 int tempSensorCount = 0;
-const String longCableSensorAddress = "28e94fcfb121064b"; // long cables (lower) 
-const String shortCableSensorAddress = "28b72bf5b121062b"; // short cables (upper) - taped 
+const String Sensor1Address = "28e94fcfb121064b"; // long cables (lower) 
+const String Sensor2Address = "28b72bf5b121062b"; // short cables (upper) - taped 
 
 void setup(void)
 {
@@ -72,7 +65,6 @@ void setup(void)
   }
   else {
     Serial.println("initialization done.");
-    //checkOrCreateFile(file_name_prefix);
     delay(100);
   }
 
@@ -89,50 +81,28 @@ void setup(void)
 void loop(void)
 { 
    // Get recording time
-  reading_time = getClock();
+  reading_time = getTime();
   
-  // Send command to all the sensors for temperature reading
+  // Send command to all the sensors for new temperature readings
   sensors.requestTemperatures(); 
-  String record_line = "";
-  
-  // Check of the target file exists in SD card, create if doesn't
-  //String current_file = file_name_prefix;
-  //checkOrCreateFile(file_name_prefix);
 
   // iterate through the detected sensors and execute write functions for the readings
   for(int i=0; i < tempSensorCount ; i++){
     DeviceAddress sensorAddress;
     sensors.getAddress(sensorAddress, i);
 
+    //Uncomment the below during first setup for sensor labelling
+    //Serial.println(addressString(sensorAddress));
+
     // Read temperature from the sensor and write to SD
-    writeTempRecord(sensorAddress, reading_time, file_name_prefix);
+    writeTempRecord(sensorAddress, reading_time, file_name);
   }
 
-  // display file
+  // display file - useful for quick debugging
   //readSD(myFileName);
 
+  // Wait for the specified period
   delay(reading_delay_minutes * 60000);
-}
-
-void checkOrCreateFile(String fileName)
-{
-  if (SD.exists(fileName))
-    Serial.println( fileName + " exists.");
-  else
-  {
-    Serial.println(fileName + " doesn't exist.");
-    /* open a new file and immediately close it:
-      this will create a new file */
-    Serial.println("Creating " + fileName + " ...");
-    myFile = SD.open(fileName, FILE_WRITE);
-    myFile.close();
-    /* Now Check again if the file exists in
-      the SD card or not */
-    if (SD.exists(fileName))
-      Serial.println(fileName + " exists.");
-    else
-      Serial.println(fileName + " doesn't exist.");
-  }
 }
 
 void writeTempRecord(DeviceAddress sensor, String reading_timestamp, String fileName)
@@ -186,7 +156,6 @@ void readSD(String fileName)
   }
 }
 
-
 String addressString(DeviceAddress deviceAddress) {
   // Create a String to store the converted address
   String address_string = "";
@@ -207,30 +176,22 @@ String labelSensor(DeviceAddress sensor)
   String sensor_id = addressString(sensor);
   String sensor_name;
 
-  if (sensor_id.equals(longCableSensorAddress)){
+  if (sensor_id.equals(Sensor1Address)){
       sensor_name = "INNER";
-  } else if (sensor_id.equals(shortCableSensorAddress)){
+  } else if (sensor_id.equals(Sensor2Address)){
       sensor_name = "OUTER";
   } else {
       sensor_name = "UNKNOWN_SENSOR";
   }
 
   return sensor_name;
-
 }
 
-String getClock(){
+String getTime(){
   char dt[32];
   DateTime now = rtc.now();
   sprintf(dt, "%02d:%02d:00 %02d/%02d/%02d", now.hour(), now.minute(), now.day(), now.month(), now.year()); 
   return String(dt); 
 }
 
-String fileName(){
-  char dt[32];
-  DateTime now = rtc.now();
-  sprintf(dt, "%02d_%02d_%02d", now.day(), now.month(), now.year()); 
-  String date_tag = String(dt); 
-  return date_tag + file_name_prefix;
 
-}

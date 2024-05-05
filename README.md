@@ -9,7 +9,7 @@ The initial intent behind this project was to create a tool for consistent tempe
 <img src="media/images/0.jpeg" width="100%" height="100%" alt="box_above">
 
 
-Detailed instructions on how to build for one yourself can be found in the [Setup Instructions](/media/manuals/"Setup_Instructions.md) document
+Detailed instructions on how to build one for yourself can be found in the [Setup Instructions](/media/manuals/Setup_Instructions.md) document
 
 
 ## Code Description
@@ -19,7 +19,7 @@ The code contains several parameters that can be adjusted based on your use case
 
 
 #### Plotting the Results
-As the results are in CSV format it can easily be worked on in many applications, including Excel. However, the repo also contains a [Python script](/plot_temp_log.py) that plots the temperature logs on a time chart (python dependency installations are not included).
+As the results are outputted to CSV file they can easily be worked on in many applications, including Excel. However, the repo also contains a [Python script](/plot_temp_log.py) that plots the temperature logs on a time chart (python dependency installations are not included).
 
 <img src="media/images/Figure_1.png" width="50%" height="50%" alt="plot_temp_log.py">
 

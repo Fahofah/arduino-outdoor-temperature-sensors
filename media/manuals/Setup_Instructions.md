@@ -2,7 +2,7 @@
 Will write detailed instructions so you can build this too
 
 
-<img src="media/images/1.jpeg" width="100%" height="50%" alt="box_side">
+<img src="/media/images/1.jpeg" width="100%" height="50%" alt="box_side">
 
 
 ## Physical Components Used
@@ -19,7 +19,7 @@ Will write detailed instructions so you can build this too
 - 2L leak-proof food container (alterable)
 - 3-Pin terminal block x2 (alterable)
 
-<img src="media/images/2.jpeg" width="100%" height="100%" alt="box_open">
+<img src="/media/images/2.jpeg" width="100%" height="100%" alt="box_open">
 
 
 ## Setup Instructions
@@ -30,7 +30,7 @@ Will write detailed instructions so you can build this too
 5. Upload the provided Arduino code to the Arduino board.
 6. Power on the system and monitor the temperature readings on the SD card.
 
-<img src="media/images/3.jpeg" width="50%" height="50%" alt="sensor_wiring">
+<img src="/media/images/3.jpeg" width="50%" height="50%" alt="sensor_wiring">
 
 
 

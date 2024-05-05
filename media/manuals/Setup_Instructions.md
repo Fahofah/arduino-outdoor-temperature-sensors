@@ -65,6 +65,8 @@ Close-up of the breadboard wiring at this stage:
 <img src="/media/images/serialMonitor.png" width="100%" height="20%" alt="upload_success">
 
 
+*You might get some errors if the used Arduino Libraries are not present, follow instructions [here](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries/) on how to install libraries*
+
 ### Enclosure
 
 When wired neatly, all components fit onto the half of a 800 pin breadboard so a 400 pin breadboard would be sufficient, but I ended up using the empty half of my 800 pin breadboard as a place to secure the Arduino unit itself - there are no conenctions from the unit directly to the board apart from the above mentioned conenctions through jumper wires.
